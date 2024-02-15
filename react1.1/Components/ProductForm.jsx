@@ -17,8 +17,8 @@ function ProductForm(props) {
   function submitHandler(event){
     event.preventDefault();
     let productData ={
-      Title : newTitle,
-      Date: newDate
+      title : newTitle,
+      date: newDate
     };
     //console.log(productData);
     props.onSaveProduct(productData);

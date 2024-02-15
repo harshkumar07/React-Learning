@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Item from '../Components/Item'
 import Products from '../Components/Products'
-import ProductForm from '../Components/ProductForm'
 import NewProduct from '../Components/NewProduct'
 
 function App() {
@@ -37,7 +35,17 @@ function App() {
 
 function printProductData (data){
   console.log('From App.js', data);
-  setProducts(prevProducts => [...prevProducts, data]);
+  const dateString = data.date;
+  const [yearStr, monthStr, dayStr] = dateString.split('-');
+
+  const year = parseInt(yearStr);
+  const month = parseInt(monthStr);
+  const day = parseInt(dayStr);
+
+  // Create a new Date object
+  const dateObject = new Date(year, month, day);
+  data.date=dateObject;
+    setProducts(prevProducts => [...prevProducts, data]);
 }
   return (
     <div className='App'>
