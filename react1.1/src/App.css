@@ -16,7 +16,8 @@ body{
 
 .Card{
   width: 400px;
-  height: 550px;
+  max-height: 550px;
+  min-height: 550px;
   border-radius: 15px;
   background-color: #282828;
   display: flex;
@@ -28,11 +29,14 @@ body{
   overflow-y: auto;
   overflow-x: hidden; 
 }
-
+.Card::-webkit-scrollbar {
+  display: none;
+}
 .ProductsItems{
   color: #fff;
   width: 395px;
-  height: 100px;
+  max-height: 100px;
+  min-height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
