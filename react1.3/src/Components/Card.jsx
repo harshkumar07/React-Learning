@@ -3,7 +3,7 @@ import {  toast } from 'react-toastify';
 
 function Card(props) {
 
-    const [logo,setLogo]= useState('🩶');
+    // const [logo,setLogo]= useState('🩶');
     let course =props.course;
     let likedCourses =props.likedCourses;
     let setLikedCourses =props.setLikedCourses;
@@ -13,7 +13,7 @@ function Card(props) {
       if(likedCourses.includes(course.id)){
         setLikedCourses((prev)=>prev.filter((cid)=>(cid !== course.id)));
         toast.warning("Liked Removed");
-        setLogo('🩶');
+        // setLogo('🩶');
       }
       else{
         if(likedCourses.length === 0){
@@ -23,7 +23,7 @@ function Card(props) {
            setLikedCourses((prev)=>[...prev,course.id]);
         }
         toast.success("Liked Successfully");
-        setLogo('❤️');
+        // setLogo('❤️');
         
       }
     }
@@ -34,9 +34,10 @@ function Card(props) {
       </div>
 
       <div className='card-button'>
-            <button className='button' onClick={eventHandler}>
-            {logo}
-            </button>
+      <button className='button' onClick={eventHandler}>
+             {likedCourses.includes(course.id) ? "❤️" : "🩶"}
+      </button>
+
      </div>
 
       <div className='card-description'>

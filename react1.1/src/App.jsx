@@ -43,7 +43,7 @@ function printProductData (data){
   const day = parseInt(dayStr);
 
   //Create a new Date object  
-  const dateObject = new Date(year, month, day);
+  const dateObject = new Date(year, month, day);  
   data.date=dateObject;
     setProducts(prevProducts => [...prevProducts, data]);
 }
