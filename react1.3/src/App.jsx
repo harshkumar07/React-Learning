@@ -17,7 +17,7 @@ function App() {
     try{
       const res = await fetch(apiUrl);
       const output = await res.json();
-      console.log(output.data);
+     // console.log(output.data);
       setCourses(output.data)
     }
     catch(error){
